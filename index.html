@@ -1,0 +1,43 @@
+
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                <title>roBrowser [1.0.0 - 2023-12-31 17:03:50]</title>
+            </head>
+            <body>
+                <script>
+                    window.addEventListener("load", (event) => {
+                        window.ROConfig = {
+                            development: false, // don't need to compile javascript files in chrome app since it's already a package.
+                            remoteClient:  "http://127.0.0.1/",
+                            version: 1.0,
+                            servers: [
+                                {
+                                    display: 'Localhost Server',
+                                    desc: "roBrowser's demo server",
+                                    address: '127.0.0.1',
+                                    port: 6900,
+                                    version: 25,
+                                    langtype: 10,
+                                    packetver: 20100730,
+                                    socketProxy: "ws://127.0.0.1:5999/",
+                                    packetKeys: false
+                                },
+                            ],
+                            packetDump:  false,
+                            skipServerList:  true,
+                            skipIntro:       true,
+                            clientVersionMode: 'PacketVer',
+                            plugins: {},
+                        };
+            
+                        script = document.createElement('script');
+                        script.type = 'text/javascript';
+                        script.src = 'Online.js';
+                        document.getElementsByTagName('body')[0].appendChild(script);
+                    });
+                </script>
+            </body>
+        </html>
+    
